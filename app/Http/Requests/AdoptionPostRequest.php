@@ -13,7 +13,7 @@ class AdoptionPostRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -21,8 +21,9 @@ class AdoptionPostRequest extends FormRequest
      *
      * @return array<string, mixed>
      */
-    public function rules()
+    public function rules($request)
     {
+
         return [
             'email' => 'required|email',
             'valor' => 'required|numeric|between:10,100',
